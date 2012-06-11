@@ -1,13 +1,13 @@
 class UrlMappings {
 
 	static mappings = {
-		"/$controller/$action?/$id?"{
-			constraints {
-				// apply constraints here
-			}
-		}
 
-		"/"(view:"/index")
-		"500"(view:'/error')
+        // Example of an API catch
+        "/1.0"(view:"/api")
+        "/1.0/**"(view:"/api")
+
+        // Catchall Mapping directs all users to your index.
+        // Enable Pushstate in backbone to take advantage.
+        "/**"(view:"/single")
 	}
 }
